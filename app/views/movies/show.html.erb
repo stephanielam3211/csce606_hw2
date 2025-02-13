@@ -1,10 +1,76 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @movie %>
-
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+<!-- Movie Details Container Styling -->
+<div class="movie-details">
+  <%= render @movie %>
 </div>
+
+<!-- Action Buttons Styling -->
+<div class="action-buttons">
+  <%= link_to "Edit this movie", edit_movie_path(@movie), class: "btn-action edit-btn" %> |
+  <%= link_to "Back to movies", movies_path, class: "btn-action back-btn" %> |
+
+  <%= button_to "Destroy this movie", @movie, method: :delete, class: "btn-action delete-btn" %>
+</div>
+
+<!-- Additional Styling -->
+<style>
+  .movie-details {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .movie-details h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .movie-details p {
+    font-size: 18px;
+    color: #555;
+  }
+
+  .action-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn-action {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+  }
+
+  .edit-btn {
+    background-color: #28a745;
+  }
+
+  .edit-btn:hover {
+    background-color: #218838;
+  }
+
+  .back-btn {
+    background-color: #007bff;
+  }
+
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .delete-btn {
+    background-color: #dc3545;
+  }
+
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+</style>
+
