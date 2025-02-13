@@ -1,12 +1,58 @@
 <% content_for :title, "Editing movie" %>
 
-<h1>Editing movie</h1>
+<h1>Editing Movie</h1>
 
-<%= render "form", movie: @movie %>
+<!-- Edit Form Container Styling -->
+<div class="form-container">
+  <%= render "form", movie: @movie %>
+</div>
 
 <br>
 
-<div>
-  <%= link_to "Show this movie", @movie %> |
-  <%= link_to "Back to movies", movies_path %>
+<!-- Action Buttons Styling -->
+<div class="action-buttons">
+  <%= link_to "Show this movie", @movie, class: "btn-action show-btn" %> |
+  <%= link_to "Back to movies", movies_path, class: "btn-action back-btn" %>
 </div>
+
+<!-- Additional Styling -->
+<style>
+  .form-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffd1dc;
+  }
+
+  .action-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn-action {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+  }
+
+  .show-btn {
+    background-color: #89cff0;
+  }
+
+  .show-btn:hover {
+    background-color: #0096ff;
+  }
+
+  .back-btn {
+    background-color: #e0b0ff;
+  }
+
+  .back-btn:hover {
+    background-color: #cf9fff;
+  }
+</style>
+
