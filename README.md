@@ -3,14 +3,13 @@
 =======
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Link: https://steph-movie-606-368f749cd839.herokuapp.com/
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 3.4.1
 
-* System dependencies
+* System dependencies: None
 
 * Configuration
 
@@ -26,4 +25,4 @@ Things you may want to cover:
 
 * ...
 >>>>>>> 46e0104 (initial commit)
-Link: https://steph-movie-606-368f749cd839.herokuapp.com/
+
