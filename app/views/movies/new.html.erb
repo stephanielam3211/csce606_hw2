@@ -1,11 +1,42 @@
 <% content_for :title, "New movie" %>
 
-<h1>New movie</h1>
+<h1>Add a New Movie</h1>
 
-<%= render "form", movie: @movie %>
+<!-- Form Styling: Centered Card with Padding -->
+<div class="form-container">
+  <%= render "form", movie: @movie %>
+</div>
 
 <br>
 
-<div>
-  <%= link_to "Back to movies", movies_path %>
+<!-- Back Link Styling -->
+<div class="btn-back-container">
+  <%= link_to "Back to Movies", movies_path, class: "btn-back" %>
 </div>
+
+<!-- Additional Styling for the Form and Back Button -->
+<style>
+  .form-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+  }
+
+  .btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .btn-back:hover {
+    background-color: #0056b3;
+  }
+</style>
+
