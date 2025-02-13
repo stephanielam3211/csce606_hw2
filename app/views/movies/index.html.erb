@@ -4,6 +4,62 @@
 
 <h1>Movies</h1>
 
+<!-- SORTABLE TABLE -->
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f4f4f4;
+    cursor: pointer;
+  }
+
+  .sorted-asc {
+    background-color: #d4edda; /* Light green */
+  }
+
+  .sorted-desc {
+    background-color: #f8d7da; /* Light red */
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <% ["title", "rating", "release_date"].each do |column| %>
+        <% sort_direction = (params[:sort] == column && params[:direction] == "asc") ? "desc" : "asc" %>
+        <% sorted_class = (params[:sort] == column) ? (params[:direction] == "asc" ? "sorted-asc" : "sorted-desc") : "" %>
+        <th class="<%= sorted_class %>">
+          <%= link_to "#{column.titleize} #{params[:sort] == column ? (params[:direction] == 'asc' ? '↑' : '↓') : ''}", movies_path(sort: column, direction: sort_direction) %>
+        </th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.release_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- ORIGINAL MOVIE LISTING -->
 <div id="movies">
   <% @movies.each do |movie| %>
     <%= render movie %>
@@ -13,4 +69,7 @@
   <% end %>
 </div>
 
-<%= link_to "New movie", new_movie_path %>
+<!-- "NEW MOVIE" BUTTON -->
+<p>
+  <%= link_to "New Movie", new_movie_path, style: "display: inline-block; padding: 10px; background-color: blue; color: white; text-decoration: none; border-radius: 5px;" %>
+</p>
