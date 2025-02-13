@@ -23,8 +23,8 @@ more_movies = [
     :release_date => '16-Apr-2019'},
   {:title => 'Star Wars: A New Hope', :rating => 'PG',
     :release_date => '25-May-1977'},
-  {:title => 'Harry Potter and the Prisoner of Azkaban', :rating => 'PG',
-    :release_date => '4-Jun-2004'}
+  {:title => 'Harry Potter and the Order of the Phoenix', :rating => 'PG-13',
+    :release_date => '7-Jul-2007'}
 ]
 
 more_movies.each do |movie|
