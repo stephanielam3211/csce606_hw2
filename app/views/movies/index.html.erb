@@ -1,8 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Movies" %>
+
+<h1>Movies</h1>
+
+<!-- SORTABLE TABLE -->
 <style>
   table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background-color: #cbc3e3;
   }
 
   th, td {
@@ -32,6 +40,18 @@
     background-color: #e6f7ff; /* Light blue on hover */
   }
 
+  .btn-show {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .btn-show:hover {
+    background-color: #0056b3;
+  }
+
   .btn-new-movie {
     display: inline-block;
     padding: 10px;
@@ -46,8 +66,6 @@
     background-color: #0056b3;
   }
 </style>
-
-<h1>Movies</h1>
 
 <table>
   <thead>
@@ -67,6 +85,9 @@
         <td><%= movie.title %></td>
         <td><%= movie.rating %></td>
         <td><%= movie.release_date %></td>
+        <td>
+          <%= link_to "Show", movie, class: "btn-show" %> <!-- Show button -->
+        </td>
       </tr>
     <% end %>
   </tbody>
